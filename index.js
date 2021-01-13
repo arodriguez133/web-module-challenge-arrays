@@ -46,9 +46,9 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-   let arr=[];
-   arr.push(array);
-   return arr;
+   
+   array.push(array);
+   return array;
 }    
 
 
@@ -84,8 +84,8 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(str,array){
-  array.unshift(str);
+function addFlavor(array,str){
+  array.unshift(str)
   return array;
 }
 
@@ -102,7 +102,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
-   return array.pop();
+   array.pop();
+   return array;
 }
 
 
@@ -139,8 +140,9 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array,str){
-array.splice(0,array.length,str);
-return array; /*your code here*/
+   let index= array.indexOf(str);
+   array.splice(index,1);
+   return array;
 }
 
 
@@ -164,16 +166,15 @@ Use the filterByWord function below to do the following:
 
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
-
 function filterByWord(array, str){
-    /*your code here*/
-    let newarr=[];
-    if(array.includes(str)=== str){
-        return newarr.push(str);
-    }else{
-        return false;
+    let filteredArray = [];
+    for(let i = 0; i < array.length; i++){
+      if(array[i].includes(str)){
+        filteredArray.push(array[i]);
+      }
     }
-}
+    return filteredArray;
+  }
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
